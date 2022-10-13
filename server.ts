@@ -3,10 +3,13 @@ import { cwd as getPwd } from "node:process";
 import path from "node:path";
 import fs from "node:fs";
 
-import { getIP } from "./ip";
-import { sendDirectory } from "./directory";
-import { sendFile } from "./file";
-import { args } from "./args";
+import chalk from "chalk";
+import boxen from "boxen";
+
+import { getIP } from "./ip.js";
+import { sendDirectory } from "./directory.js";
+import { sendFile } from "./file.js";
+import { args } from "./args.js";
 
 let server;
 
@@ -43,7 +46,18 @@ function createServer() {
   });
 
   server.listen(port, host, () => {
-    console.log(`Server Started on: http://${host}:${port}`);
+    console.log(
+      boxen(
+        chalk.yellow("Server started on: ") +
+          chalk.bold.underline.green(`http://${host}:${port}`),
+        {
+          title: chalk.bold.rgb(160, 32, 240)("Iris"),
+          textAlignment: "center",
+          padding: 1,
+          margin: 1,
+        }
+      )
+    );
   });
 
   server.on("error", () => {

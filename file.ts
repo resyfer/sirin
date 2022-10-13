@@ -2,7 +2,7 @@ import http from "node:http";
 import fs from "node:fs";
 import mime from "mime";
 
-import { args } from "./args";
+import { args } from "./args.js";
 
 function sendFile(
   res: http.ServerResponse<http.IncomingMessage>,

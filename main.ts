@@ -1,13 +1,11 @@
-import { setArgs } from "./args";
-import { createServer } from "./server";
-import { args } from "./args";
+import { initializeArgs } from "./args.js";
+import { createServer } from "./server.js";
+import { args } from "./args.js";
 
-setArgs();
+initializeArgs();
 
-// Set Required Headers
+// Set Required Arguments
 args["d"] ?? (args["d"] = ".");
 args["t"] ?? (args["t"] = false);
-
-// console.log(args);
 
 createServer();
