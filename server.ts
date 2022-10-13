@@ -5,6 +5,7 @@ import fs from "node:fs";
 
 import chalk from "chalk";
 import boxen from "boxen";
+import clipboard from "clipboardy";
 
 import { getIP } from "./ip.js";
 import { sendDirectory } from "./directory.js";
@@ -46,15 +47,23 @@ function createServer() {
   });
 
   server.listen(port, host, () => {
+    const url = `http://${host}:${port}`;
+
+    clipboard.writeSync(url);
+
     console.log(
       boxen(
         chalk.yellow("Server started on: ") +
-          chalk.bold.underline.green(`http://${host}:${port}`),
+          chalk.bold.underline.green(url) +
+          "\n" +
+          "\n" +
+          chalk.gray("URL copied to clipboard"),
         {
           title: chalk.bold.rgb(160, 32, 240)("Iris"),
           textAlignment: "center",
           padding: 1,
           margin: 1,
+          borderColor: "green",
         }
       )
     );
@@ -63,6 +72,16 @@ function createServer() {
   server.on("error", () => {
     console.error("Error");
   });
+
+  process.on("SIGINT", serverClose(server));
+}
+
+function serverClose(server: http.Server) {
+  return () => {
+    console.log(chalk.red("Closing Server..."));
+    server.close();
+    console.log(chalk.green("Server Closed!"));
+  };
 }
 
 export { createServer };

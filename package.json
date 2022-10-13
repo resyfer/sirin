@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node dist/main.js",
     "build": "tsc",
-    "dev": "nodemon --exec ts-node-esm main.ts"
+    "dev": "nodemon --exec ts-node-esm main.ts",
+    "check": "pnpm build && pnpm start"
   },
   "type": "module",
   "keywords": [],
