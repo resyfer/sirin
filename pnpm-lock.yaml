@@ -4,6 +4,7 @@ specifiers:
   '@types/mime': ^3.0.1
   '@types/minimist': ^1.2.2
   '@types/node': ^18.8.4
+  '@types/urlencode': ^1.1.2
   boxen: ^7.0.0
   chalk: ^5.1.2
   clipboardy: ^3.0.0
@@ -11,6 +12,7 @@ specifiers:
   minimist: ^1.2.7
   nodemon: ^2.0.20
   ts-node: ^10.9.1
+  urlencode: ^1.1.0
 
 dependencies:
   boxen: 7.0.0
@@ -18,11 +20,13 @@ dependencies:
   clipboardy: 3.0.0
   mime: 3.0.0
   minimist: 1.2.7
+  urlencode: 1.1.0
 
 devDependencies:
   '@types/mime': 3.0.1
   '@types/minimist': 1.2.2
   '@types/node': 18.8.4
+  '@types/urlencode': 1.1.2
   nodemon: 2.0.20
   ts-node: 10.9.1_xkk4lltwku4cysulzbqoieownu
 
@@ -77,6 +81,10 @@ packages:
 
   /@types/node/18.8.4:
     resolution: {integrity: sha512-WdlVphvfR/GJCLEMbNA8lJ0lhFNBj4SW3O+O5/cEGw9oYrv0al9zTwuQsq+myDUXgNx2jgBynoVgZ2MMJ6pbow==}
+    dev: true
+
+  /@types/urlencode/1.1.2:
+    resolution: {integrity: sha512-4Gqya3/CmZ280CA6DvBnHmnq/vfgIqXJvzUC2S7a8kxmv/gbmt0uhJbx6m7ypWJvNn9n8DKWj5LD8wFpSxeQuA==}
     dev: true
 
   /abbrev/1.1.1:
@@ -305,6 +313,13 @@ packages:
     engines: {node: '>=10.17.0'}
     dev: false
 
+  /iconv-lite/0.4.24:
+    resolution: {integrity: sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==}
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      safer-buffer: 2.1.2
+    dev: false
+
   /ignore-by-default/1.0.1:
     resolution: {integrity: sha512-Ius2VYcGNk7T90CppJqcIkS5ooHUZyIQK+ClZfMfMNFEF9VSE73Fq+906u/CWu92x4gzZMWOwfFYckPObzdEbA==}
     dev: true
@@ -457,6 +472,10 @@ packages:
       picomatch: 2.3.1
     dev: true
 
+  /safer-buffer/2.1.2:
+    resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
+    dev: false
+
   /semver/5.7.1:
     resolution: {integrity: sha512-sauaDf/PZdVgrLTNYHRtpXa1iRiKcaebiKQ1BJdpQlWH2lCvexQdX55snPFyK7QzpudqbCI0qXFfOasHdyNDGQ==}
     hasBin: true
@@ -593,6 +612,12 @@ packages:
   /undefsafe/2.0.5:
     resolution: {integrity: sha512-WxONCrssBM8TSPRqN5EmsjVrsv4A8X12J4ArBiiayv3DyyG3ZlIg6yysuuSYdZsVz3TKcTg2fd//Ujd4CHV1iA==}
     dev: true
+
+  /urlencode/1.1.0:
+    resolution: {integrity: sha512-OOAOh9owHXr/rCN1tteSnYwIvsrGHamSz0hafMhmQa7RcS4+Ets6/2iVClVGjt9jkDW84UqoMw/Gmpc7QolX6A==}
+    dependencies:
+      iconv-lite: 0.4.24
+    dev: false
 
   /v8-compile-cache-lib/3.0.1:
     resolution: {integrity: sha512-wa7YjyUGfNZngI/vtK0UHAN+lgDCxBPCylVXGp0zu59Fz5aiGtNXaq3DhIov063MorB+VfufLh3JlF2KdTK3xg==}

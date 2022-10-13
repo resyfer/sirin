@@ -6,6 +6,7 @@ import fs from "node:fs";
 import chalk from "chalk";
 import boxen from "boxen";
 import clipboard from "clipboardy";
+import urlencode from "urlencode";
 
 import { getIP } from "./ip.js";
 import { sendDirectory } from "./directory.js";
@@ -24,6 +25,8 @@ function createServer() {
     if (!req.url) {
       req.url = "/";
     }
+
+    req.url = urlencode.decode(req.url);
 
     const fullPath = path.join(
       basePath,
