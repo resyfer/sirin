@@ -1,0 +1,27 @@
+{
+  "name": "iris",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/main.js",
+    "build": "tsc",
+    "dev": "nodemon --exec ts-node main.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/mime": "^3.0.1",
+    "@types/minimist": "^1.2.2",
+    "@types/node": "^18.8.4",
+    "nodemon": "^2.0.20",
+    "ts-node": "^10.9.1"
+  },
+  "dependencies": {
+    "chalk": "^5.1.2",
+    "chalk-template": "^0.4.0",
+    "mime": "^3.0.0",
+    "minimist": "^1.2.7"
+  }
+}
