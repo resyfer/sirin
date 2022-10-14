@@ -5,7 +5,7 @@ import { exit } from "node:process";
 import { args } from "./args.js";
 
 let port: number;
-const DEFAULT_PORT = 3000;
+const DEFAULT_PORTS = [3000, 3001, 3002, 5000, 8000, 8080];
 
 async function setPort() {
   if (args["p"] && typeof args["p"] !== "number") {
@@ -21,8 +21,8 @@ async function setPort() {
       console.log(chalk.yellow.italic(`Port ${args["p"]} is unavailable.`));
     }
   } else {
-    // Preference is DEFAULT_PORT if available
-    port = await getPort({ port: DEFAULT_PORT });
+    // Preference is DEFAULT_PORTS if available
+    port = await getPort({ port: DEFAULT_PORTS });
   }
 }
 

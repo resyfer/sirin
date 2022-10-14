@@ -14,6 +14,9 @@ import { sendDirectory } from "./directory.js";
 import { sendFile } from "./file.js";
 import { args } from "./args.js";
 
+// https://stackoverflow.com/a/70106896
+import manifest from "./package.json" assert { type: "json" };
+
 let server;
 
 function createServer() {
@@ -60,13 +63,24 @@ function createServer() {
           "\n" +
           chalk.gray("URL copied to clipboard"),
         {
-          title: chalk.bold.rgb(160, 32, 240)("Iris"),
+          title: `${chalk.bold.rgb(160, 32, 240)("Iris")} ${chalk.blue(
+            `v${manifest.version}`
+          )}`,
           textAlignment: "center",
           padding: 1,
           margin: 1,
           borderColor: "green",
         }
-      )
+      ),
+      "\n",
+      chalk.rgb(
+        218,
+        52,
+        80
+      )(`
+By Saurav Pal,
+Cloud & DevOps Moderator,
+GDSC NIT Silchar 2022-23`)
     );
   });
 
