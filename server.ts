@@ -66,7 +66,7 @@ function createServer() {
           "\n" +
           chalk.gray("URL copied to clipboard"),
         {
-          title: `${chalk.bold.rgb(160, 32, 240)("Iris")} ${chalk.blue(
+          title: `${chalk.bold.rgb(160, 32, 240)("Sirin")} ${chalk.blue(
             `v${manifest.version}`
           )}`,
           textAlignment: "center",

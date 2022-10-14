@@ -1,2 +1,2 @@
-# iris
-Share files or directories instantly over LAN
+# Sirin
+CLI to share files of all kinds to anyone connected to your network
