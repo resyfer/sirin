@@ -20,20 +20,17 @@ import manifest from "./package.json" assert { type: "json" };
 let server;
 
 function createServer() {
-  server = http.createServer((req, res) => {
-    const basePath = getPwd();
+  let basePath = getPwd();
+  basePath = path.join(basePath, args["dir"] as string);
 
+  server = http.createServer((req, res) => {
     if (!req.url) {
       req.url = "/";
     }
 
     req.url = urlencode.decode(req.url);
 
-    const fullPath = path.join(
-      basePath,
-      args["d"] as string,
-      ...req.url!.split("/")
-    );
+    const fullPath = path.join(basePath, ...req.url!.split("/"));
 
     if (!fs.existsSync(fullPath)) {
       return res.end("Invalid File Path");
@@ -60,6 +57,8 @@ function createServer() {
         chalk.yellow("Server started on: ") +
           chalk.bold.underline.green(url) +
           "\n" +
+          "\n" +
+          chalk.dim.red(`Exposed Directory: ${basePath}`) +
           "\n" +
           chalk.gray("URL copied to clipboard"),
         {

@@ -11,7 +11,7 @@ function sendFile(
   const stats = fs.statSync(fullPath);
 
   res.writeHead(200, {
-    "Content-Type": args["t"] ? "text/plain" : mime.getType(fullPath)!,
+    "Content-Type": args["text"] ? "text/plain" : mime.getType(fullPath)!,
     "Content-Length": stats.size,
   });
 

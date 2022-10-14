@@ -1,13 +1,15 @@
-import { initializeArgs } from "./args.js";
+import { setArgs } from "./args.js";
 import { setIP } from "./ip.js";
 import { setPort } from "./port.js";
 import { createServer } from "./server.js";
+import { infoChecker } from "./cli.js";
 
 //! Use pnpm check if using args
 
 (async () => {
-  initializeArgs();
+  setArgs();
   setIP();
+  infoChecker();
   await setPort();
   createServer();
 })();

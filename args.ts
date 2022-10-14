@@ -3,13 +3,15 @@ import { exit } from "process";
 
 let args: minimist.ParsedArgs;
 
-function initializeArgs() {
+function setArgs() {
   args = minimist(process.argv.slice(2), {
-    string: ["dir", "version"],
-    boolean: ["text", "help"],
+    string: ["dir"],
+    boolean: ["text", "help", "version"],
+
     // number: ["port"]
     //* IDK why, but minimist doesn't have numbers in options
     //* even though it supports them
+
     alias: {
       d: "dir",
       v: "version",
@@ -17,11 +19,14 @@ function initializeArgs() {
       p: "port",
       h: "help",
     },
+
     default: {
       dir: ".",
       text: false,
+      help: false,
+      version: false,
     },
   });
 }
 
-export { args, initializeArgs };
+export { args, setArgs };
