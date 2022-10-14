@@ -28,6 +28,9 @@ function setIP() {
     }
   }
 
+  // ip[0] => Ethernet
+  // ip[1] => WLAN
+
   if (ips[0] !== "") {
     ip = ips[0];
   } else if (ips.length > 1) {

@@ -20,16 +20,19 @@ import manifest from "./package.json" assert { type: "json" };
 let server;
 
 function createServer() {
-  let basePath = getPwd();
-  basePath = path.join(basePath, args["dir"] as string);
+  // Base Path of Directory
+  let basePath = path.join(getPwd(), args["dir"] as string);
 
+  // Request Handler
   server = http.createServer((req, res) => {
     if (!req.url) {
       req.url = "/";
     }
 
+    // Decode the encoded URL
     req.url = urlencode.decode(req.url);
 
+    // Full path to requested file or directory
     const fullPath = path.join(basePath, ...req.url!.split("/"));
 
     if (!fs.existsSync(fullPath)) {
@@ -47,6 +50,7 @@ function createServer() {
     }
   });
 
+  // Output when server is ready
   server.listen(port, ip, () => {
     const url = `http://${ip}:${port}`;
 
@@ -87,6 +91,7 @@ GDSC NIT Silchar 2022-23`)
     console.error("Error");
   });
 
+  // Graceful Exit
   process.on("SIGINT", serverClose(server));
 }
 

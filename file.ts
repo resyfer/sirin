@@ -4,6 +4,12 @@ import mime from "mime";
 
 import { args } from "./args.js";
 
+/**
+ * @description Stream the requested file
+ *
+ * @param res Response Object
+ * @param fullPath Path to the directory
+ */
 function sendFile(
   res: http.ServerResponse<http.IncomingMessage>,
   fullPath: string
