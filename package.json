@@ -25,6 +25,7 @@
     "boxen": "^7.0.0",
     "chalk": "^5.1.2",
     "clipboardy": "^3.0.0",
+    "get-port": "^6.1.2",
     "mime": "^3.0.0",
     "minimist": "^1.2.7",
     "urlencode": "^1.1.0"

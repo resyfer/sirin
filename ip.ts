@@ -6,7 +6,9 @@ const wlanRegex = /^(wl).+/;
 
 const LOCALHOST = "127.0.0.1";
 
-function getIP(): string {
+let ip: string;
+
+function setIP() {
   const devs = os.networkInterfaces();
 
   // console.log(devs);
@@ -27,12 +29,12 @@ function getIP(): string {
   }
 
   if (ips[0] !== "") {
-    return ips[0];
+    ip = ips[0];
   } else if (ips.length > 1) {
-    return ips[1];
+    ip = ips[1];
   } else {
-    return LOCALHOST;
+    ip = LOCALHOST;
   }
 }
 
-export { getIP };
+export { ip, setIP };

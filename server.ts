@@ -8,7 +8,8 @@ import boxen from "boxen";
 import clipboard from "clipboardy";
 import urlencode from "urlencode";
 
-import { getIP } from "./ip.js";
+import { ip } from "./ip.js";
+import { port } from "./port.js";
 import { sendDirectory } from "./directory.js";
 import { sendFile } from "./file.js";
 import { args } from "./args.js";
@@ -16,9 +17,6 @@ import { args } from "./args.js";
 let server;
 
 function createServer() {
-  const host = getIP();
-  const port = 3000;
-
   server = http.createServer((req, res) => {
     const basePath = getPwd();
 
@@ -49,8 +47,8 @@ function createServer() {
     }
   });
 
-  server.listen(port, host, () => {
-    const url = `http://${host}:${port}`;
+  server.listen(port, ip, () => {
+    const url = `http://${ip}:${port}`;
 
     clipboard.writeSync(url);
 
