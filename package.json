@@ -1,10 +1,11 @@
 {
   "name": "sirin",
   "version": "1.0.0",
-  "description": "",
-  "main": "main.js",
+  "description": "CLI to share files of all kinds to anyone connected to your network",
+  "main": "./lib/main.js",
+  "types": "./lib/main.d.ts",
   "scripts": {
-    "start": "NODE_NO_WARNINGS=1 node dist/main.js",
+    "start": "NODE_NO_WARNINGS=1 node lib/main.js",
     "build": "tsc",
     "dev": "NODE_NO_WARNINGS=1 nodemon --exec ts-node-esm main.ts",
     "check": "pnpm build && pnpm start"
@@ -30,5 +31,8 @@
     "mime": "^3.0.0",
     "minimist": "^1.2.7",
     "urlencode": "^1.1.0"
-  }
+  },
+  "files": [
+    "lib"
+  ]
 }
