@@ -1,6 +1,6 @@
 {
   "name": "sirin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CLI to share files of all kinds to anyone connected to your network",
   "main": "./lib/main.js",
   "types": "./lib/main.d.ts",
@@ -10,6 +10,7 @@
     "dev": "NODE_NO_WARNINGS=1 nodemon --exec ts-node-esm main.ts",
     "check": "pnpm build && pnpm start"
   },
+  "bin": "./lib/main.js",
   "type": "module",
   "keywords": [],
   "author": "",
