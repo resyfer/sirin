@@ -19,24 +19,27 @@ function infoChecker() {
 function helpChecker() {
   if (args["help"]) {
     console.log(`
-${chalk.yellow("Usage")}:  ${chalk.rgb(160, 32, 240)(manifest.name)} [options]
+${chalk.yellow("USAGE")}:  ${chalk.rgb(160, 32, 240)(manifest.name)} [OPTIONS]
 
-${chalk.yellow("Options")}:
+${chalk.yellow("OPTIONS")}:
   -h, --help                Show this helpful message and exit
   -v, --version             Show the version
   -d, --dir  PATH           Provide the relative path of the directory to expose from the PWD
   -p, --port PORT           Provide the preferable PORT
   -t, --text                Get all the files except media as text (no prompt to download them when visiting URL)
 
-${chalk.yellow("Example")}:
+${chalk.yellow("EXAMPLES")}:
 
-sirin
-sirin -h ${chalk.gray("or,")} sirin --help
-sirin --text ${chalk.gray("or,")} sirin -t
-sirin --dir=. ${chalk.gray("or,")} sirin -d .
-sirin --port 9876 ${chalk.gray("or,")} sirin -p 9876
-
-sirin -d . -p 9876 -t
+  sirin
+  sirin -h
+  sirin --help
+  sirin --text
+  sirin -t
+  sirin --dir="../hello"
+  sirin -d ../hello
+  sirin --port 9876
+  sirin -p 9876
+  sirin -d . -p 9876 -t
 `);
     exit(0);
   }
@@ -47,7 +50,11 @@ sirin -d . -p 9876 -t
  */
 function versionChecker() {
   if (args["version"]) {
-    console.log(chalk.green(`v${manifest.version}`));
+    console.log(
+      chalk.rgb(160, 32, 240)(manifest.name) +
+        " " +
+        chalk.green(`v${manifest.version}`)
+    );
     exit(0);
   }
 }
