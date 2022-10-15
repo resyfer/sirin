@@ -4,7 +4,7 @@
 CLI to **instantly** share a directory and its contents to anyone connected to your network over HTTP, be it LAN or your hotspot. Doesn't require internet.
 
 # Installation
-Make sure you have NodeJS [installed](https://nodejs.org/en/) and have NPM as well
+Make sure you have NodeJS **(>= v16.14.0)** [installed](https://nodejs.org/en/) and have NPM as well
 ```
 npm i -g sirin
 ```
