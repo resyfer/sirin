@@ -10,6 +10,7 @@
     "lint": "tsc --noEmit",
     "dev": "NODE_NO_WARNINGS=1 nodemon --exec ts-node-esm main.ts",
     "check": "pnpm build && pnpm start",
+    "prepublish": "pnpm build",
     "pre-commit": "lint-staged"
   },
   "bin": "./lib/main.js",
