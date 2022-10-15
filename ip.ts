@@ -11,7 +11,7 @@ let ip: string;
 function setIP() {
   const devs = os.networkInterfaces();
 
-  console.log(devs);
+  // console.log(devs);
 
   const ips = [""];
   for (let dev in devs) {

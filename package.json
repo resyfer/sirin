@@ -1,6 +1,6 @@
 {
   "name": "sirin",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "CLI to share files of all kinds to anyone connected to your network",
   "main": "./lib/main.js",
   "types": "./lib/main.d.ts",
